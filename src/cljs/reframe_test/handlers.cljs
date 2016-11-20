@@ -37,7 +37,8 @@
           hierarchy (db/build-group-hierarchy root 0 true db/dummy-groups)]
       (merge appdb {:groups-initialized true
                     :groups groups
-                    :group-hierarchy hierarchy}))))
+                    :group-hierarchy hierarchy
+                    :location [:groups]}))))
 
 (re-frame/register-handler
   :toggle-group-row
@@ -48,6 +49,10 @@
         (assoc appdb :group-hierarchy new-groups)
         appdb))))
 
-
+(re-frame/register-handler
+  :navigate-to
+  common-middlewares
+  (fn [appdb view-and-args]
+    (assoc appdb :location (subvec view-and-args 1))))
 
 (def zipper1 (zip/vector-zip [{:id 1 :name "root" :expanded true} [{:id 2 :name "Herlev" :expanded true} [{:id 3 :name "Akut" :expanded false} {:id 4 :name "Sandkas" :expanded false}]] {:id 5 :name "hive" :expanded false}]))

@@ -32,6 +32,11 @@
       (reaction (and @users-init @groups-init)))))
 
 (re-frame/register-sub
+  :location
+  (fn [db]
+    (reaction (first (:location @db)))))
+
+(re-frame/register-sub
   :users
   (fn [db]
     (reaction (:users @db))))
@@ -72,6 +77,9 @@
 (re-frame/register-sub
   :current-group
   (fn [db]
-    (let [id (reaction (:current-group-id @db))
-          groups (reaction (:groups @db))]
-      (reaction (@id @groups)))))
+    (let [location (reaction (:location @db))]
+      (reaction
+        (let [[view & args] @location]
+          (if (= :group view)
+            (first args)
+            nil))))))
