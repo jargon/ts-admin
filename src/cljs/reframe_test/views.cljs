@@ -17,7 +17,7 @@
 (def Form (reagent/adapt-react-class (aget js/ReactBootstrap "Form")))
 (def FormGroup (reagent/adapt-react-class (aget js/ReactBootstrap "FormGroup")))
 (def InputGroup (reagent/adapt-react-class (aget js/ReactBootstrap "InputGroup")))
-(def InputGroup.Button (reagent/adapt-react-class (aget js/ReactBootstrap "InputGroup.Button")))
+(def InputGroup.Button (reagent/adapt-react-class (aget js/ReactBootstrap "InputGroup" "Button")))
 (def Col (reagent/adapt-react-class (aget js/ReactBootstrap "Col")))
 (def FormControl (reagent/adapt-react-class (aget js/ReactBootstrap "FormControl")))
 (def ControlLabel (reagent/adapt-react-class (aget js/ReactBootstrap "ControlLabel")))

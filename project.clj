@@ -1,13 +1,13 @@
 (defproject reframe-test "0.1.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.170"]
-                 [reagent "0.6.0-SNAPSHOT"]
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [org.clojure/clojurescript "1.9.293"]
+                 [reagent "0.6.0"]
                  [re-frame "0.7.0"]
                  [cljsjs/react "15.0.2-0"]
                  [cljsjs/react-dom "15.0.2-0"]
                  [cljsjs/react-dom-server "15.0.2-0"]
-                 [cljsjs/react-bootstrap "0.29.2-0"]
-                 [prismatic/schema "1.1.0"]
+                 [cljsjs/react-bootstrap "0.30.6-0"]
+                 [prismatic/schema "1.1.3"]
                  [secretary "1.2.3"]]
 
   :min-lein-version "2.5.3"
